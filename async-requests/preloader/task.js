@@ -1,11 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const loader = document.getElementById('loader');
     const itemsContainer = document.getElementById('items');
-    
     function renderRates(valutes) {
-        // Очищаем контейнер
         itemsContainer.innerHTML = '';
-
         Object.values(valutes).forEach(currency => {
             const item = document.createElement('div');
             item.className = 'item';
@@ -30,8 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return null;
         }
     }
-
-
+    
     async function loadRates() {
         loader.classList.add('loader_active');
         const valutes = await fetchRates();
